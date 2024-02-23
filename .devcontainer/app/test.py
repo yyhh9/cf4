@@ -95,7 +95,7 @@ def handle_post():
         # 返回一个JSON响应
         if not q.empty():
             cookies = q.get()
-            return jsonify({"error": "", "result": {"cookies": cookies}}), 200
+            return jsonify({"error": None, "result": {"cookies": cookies}}), 200
         return jsonify({"error": "failed"}), 500
     else:
         return jsonify({"error": "Request must be JSON"}), 400
